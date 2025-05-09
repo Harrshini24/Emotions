@@ -24,8 +24,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 
 # Step 3: Load the dataset
-url = "/content/sentiment.csv"
+url = "sentiment.csv"
 df = pd.read_csv(url)
+
 
 # Step 4: Basic Exploration
 print("Initial Shape:", df.shape)
