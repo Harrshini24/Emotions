@@ -230,6 +230,7 @@ for idx, emotion in enumerate(labels):
     plt.tight_layout()
     plt.show()
 
+!pip install -r requirements.txt
 # Create and write to requirements.txt
 with open("requirements.txt", "w") as f:
     f.write("""streamlit
@@ -243,5 +244,14 @@ wordcloud
 """)
 
 # Download to your computer
-from google.colab import files
-files.download("requirements.txt")
+import streamlit as st
+import pandas as pd
+
+# Add the Streamlit file uploader widget
+uploaded_file = st.file_uploader("sentiment", type=["csv"])
+
+if uploaded_file is not None:
+    # Read the uploaded CSV file
+    df = pd.read_csv(uploaded_file) # Changed 'sentiment' to 'uploaded_file'
+    # You can display the dataframe in the app if needed
+    st.write(df.head())
