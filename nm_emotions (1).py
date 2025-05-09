@@ -230,7 +230,6 @@ for idx, emotion in enumerate(labels):
     plt.tight_layout()
     plt.show()
 
-!pip install -r requirements.txt
 # Create and write to requirements.txt
 with open("requirements.txt", "w") as f:
     f.write("""streamlit
